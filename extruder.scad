@@ -8,7 +8,7 @@ $fn = 200;
 
 //!for (side = [0, 1]) mirror([0, side, 0]) translate([0, 16, 0])
 !
-//mirror([1, 0, 0]) //uncomment for reverse
+mirror([1, 0, 0]) //uncomment for reverse
 union() {
 	translate([14, 6, 0]) rotate(30) idler();
 	translate([-8, -6, 0]) base();
