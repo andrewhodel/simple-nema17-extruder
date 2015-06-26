@@ -1,8 +1,11 @@
-$fn=200;
+$fn=100;
 
 // diameter of the extruder gear
 // subtract ~.5 for inset
-extruderGearDiameter = 7.5;
+extruderGearDiameter = 7;
+
+// filament size
+filamentDiameter = 1.75;
 
 difference() {
 	// back side
@@ -26,7 +29,7 @@ difference() {
 				translate([21+8-4.5-(extruderGearDiameter/2),(78-6)/2,0]) cube([9,9,20]);
 			}
 			// filament opening
-			translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=2,h=22);
+			translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=(filamentDiameter/2)+.5,h=22);
 		}
 
 		// middle plate
@@ -43,11 +46,13 @@ difference() {
 	// hotend inset
 	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=8.25,h=5.2);
 
-	// hotend mount screws
-	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5+(47/2),4.5]) cylinder(r = 4 / cos(180 / 6) + 0.05, h=4, $fn=6);
-	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5+(47/2),-1]) cylinder(r=2,h=10);
+	// hotend mount screws 50 mm apart
+	// nut shaped inset
+	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5+(50/2),4.5]) cylinder(r = 3.5 / cos(180 / 6) + 0.05, h=4, $fn=6);
+	// actual hole
+	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5+(50/2),-1]) cylinder(r=2,h=10);
 
-	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5-(47/2),4.5]) cylinder(r = 4 / cos(180 / 6) + 0.05, h=4, $fn=6);
-	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5-(47/2),-1]) cylinder(r=2,h=10);
+	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5-(50/2),4.5]) cylinder(r = 3.5 / cos(180 / 6) + 0.05, h=4, $fn=6);
+	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5-(50/2),-1]) cylinder(r=2,h=10);
 
 }
