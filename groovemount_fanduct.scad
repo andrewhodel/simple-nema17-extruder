@@ -82,5 +82,5 @@ translate([0, 10*i,0]) rotate([90,0,0]) cylinder(r=2, h = 7, $fn=20,center= true
 }
 
 translate([0,0,M_height/2]) mount();
-translate([-35,15,5]) rotate([0,0,180]) fan_mounts();
+translate([-33,15,5]) rotate([0,0,180]) fan_mounts();
 
