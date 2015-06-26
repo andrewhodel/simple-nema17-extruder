@@ -30,6 +30,11 @@ difference() {
 			}
 			// filament opening
 			translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=(filamentDiameter/2)+.5,h=22);
+
+			// angled outside edges
+			translate([60,0,11/2]) rotate([0,0,45]) cube([50,50,11], center=true);
+			translate([60,83,11/2]) rotate([0,0,45]) cube([50,50,11], center=true);
+
 		}
 
 		// middle plate
@@ -43,8 +48,8 @@ difference() {
 	translate([8+5.5,(78-6)/2+8,8+5.5]) rotate([-90,0,0]) cylinder(r=1.6,h=8);
 	translate([8+5.5+31,(78-6)/2+8,8+5.5]) rotate([-90,0,0]) cylinder(r=1.6,h=8);
 
-	// hotend inset
-	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=8.25,h=5.2);
+	// hotend inset 5mm deep
+	translate([21+8-(extruderGearDiameter/2),(78-6)/2+4.5,-1]) cylinder(r=8.25,h=6);
 
 	// hotend mount screws 50 mm apart
 	// nut shaped inset
